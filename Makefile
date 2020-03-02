@@ -1,15 +1,15 @@
 # **************************************************************************** #
-#                                                           LE - /             #
-#                                                               /              #
-#    Makefile                                         .::    .:/ .      .::    #
-#                                                  +:+:+   +:    +:  +:+:+     #
-#    By: dgascon <dgascon@student.le-101.fr>        +:+   +:    +:    +:+      #
-#                                                  #+#   #+    #+    #+#       #
-#    Created: 2019/10/07 15:11:52 by dgascon      #+#   ##    ##    #+#        #
-#    Updated: 2020/02/13 16:33:56 by dgascon     ###    #+. /#+    ###.fr      #
-#                                                          /                   #
-#                                                         /                    #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/10/07 15:11:52 by dgascon           #+#    #+#              #
+#    Updated: 2020/03/02 18:51:42 by nlecaill         ###   ########lyon.fr    #
+#                                                                              #
 # **************************************************************************** #
+
 
 .PHONY:	all clean fclean re
 
@@ -63,9 +63,10 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				ftprintf/display/pf_disp_perc.c 						\
 				ftprintf/display/pf_disp_ptr.c 							\
 				ftprintf/display/pf_disp_string.c 						\
-				ftprintf/display/pf_disp.c
+				ftprintf/display/pf_disp.c								\
+				complex/add_comp.c	complex/mult_comp.c
 
-INCS_LIST	=	libft.h libftenum.h libftgnl.h libftlst.h libftmaths.h libftmem.h libftnumbers.h libftprintf.h libftput.h libftstring.h
+INCS_LIST	=	libft.h libftenum.h libftgnl.h libftlst.h libftmaths.h libftmem.h libftnumbers.h libftprintf.h libftput.h libftstring.h libftcomplex.h
 
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRC_LIST:.c=.o))
 INCS		=	$(addprefix $(PATH_INC)/, $(INCS_LIST))
@@ -75,7 +76,7 @@ INCLUDES	=	-I$(PATH_INC)
 CFLAGS		=	-Wall -Wextra -Werror
 C-O			=	$(CC) $(CFLAGS) $(PF_LIB) $(INCLUDES) -c $< -o $@
 
-DIRS_LIST	= mem put lists string utils gnl maths numbers ftprintf ftprintf/display ftprintf/lists
+DIRS_LIST	= mem put lists string utils gnl maths numbers ftprintf ftprintf/display ftprintf/lists complex
 
 all: $(NAME)
 	@ printf "\r                                                                                          \r"
