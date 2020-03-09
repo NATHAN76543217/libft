@@ -6,7 +6,7 @@
 /*   By: dgascon <dgascon@student.le-101.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 20:15:13 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:22 by dgascon          ###   ########lyon.fr   */
+/*   Updated: 2020/03/09 18:33:15 by nlecaill         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 static	int	trimcmp(char const c1, char const *s2)
 {
-	int i;
-
-	i = 0;
 	while (*s2)
 		if (c1 == *s2++)
 			return (1);
