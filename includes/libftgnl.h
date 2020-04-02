@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   libftgnl.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgascon <dgascon@student.le-101.fr>        +#+  +:+       +#+        */
+/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:32:02 by dgascon           #+#    #+#             */
 /*   Updated: 2020/02/17 09:18:09 by dgascon          ###   ########lyon.fr   */

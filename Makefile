@@ -20,7 +20,7 @@ PATH_SRC	=	srcs
 PATH_OBJ	=	objs
 
 SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
-				string/ft_tolower.c		string/ft_atoi.c				\
+				string/ft_tolower.c						\
 				string/ft_isascii.c		string/ft_isprint.c				\
 				string/ft_isalpha.c		string/ft_isdigit.c				\
 				string/ft_isalnum.c		string/ft_strchr.c				\
@@ -32,7 +32,7 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				string/ft_split.c		string/ft_strmapi.c				\
 				string/ft_strcat.c		string/ft_strichr.c				\
 				string/ft_chartostr.c	string/ft_charstr.c				\
-				string/ft_strcmp.c										\
+				string/ft_strcmp.c		string/ft_str_endwith.c			\
 				string/ft_delcharstr.c									\
 				mem/ft_memset.c			mem/ft_bzero.c					\
 				mem/ft_memcpy.c			mem/ft_memccpy.c				\
@@ -55,6 +55,7 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				numbers/ft_digit.c		numbers/ft_digit_base.c			\
 				numbers/ft_digit_ul_base.c numbers/ft_itoa.c			\
 				numbers/ft_itoa_base.c	numbers/ft_digit_format_base.c	\
+				numbers/ft_atoi.c		numbers/ft_natoi.c				\
 				utils/ft_base.c			utils/colors.c					\
 				ftprintf/ft_printf.c	ftprintf/pf_conv.c				\
 				ftprintf/pf_utils.c		ftprintf/lists/pf_initlst.c		\
@@ -64,9 +65,10 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				ftprintf/display/pf_disp_ptr.c 							\
 				ftprintf/display/pf_disp_string.c 						\
 				ftprintf/display/pf_disp.c								\
-				complex/add_comp.c	complex/mult_comp.c
+				complex/add_comp.c	complex/mult_comp.c					\
+				endian/ft_endian.c 		endian/ft_r_endian_int.c		
 
-INCS_LIST	=	libft.h libftenum.h libftgnl.h libftlst.h libftmaths.h libftmem.h libftnumbers.h libftprintf.h libftput.h libftstring.h libftcomplex.h
+INCS_LIST	=	libft.h libftenum.h libftgnl.h libftlst.h libftmaths.h libftmem.h libftnumbers.h libftprintf.h libftput.h libftstring.h libftcomplex.h libftendian.h
 
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRC_LIST:.c=.o))
 INCS		=	$(addprefix $(PATH_INC)/, $(INCS_LIST))
@@ -76,7 +78,8 @@ INCLUDES	=	-I$(PATH_INC)
 CFLAGS		=	-Wall -Wextra -Werror
 C-O			=	$(CC) $(CFLAGS) $(PF_LIB) $(INCLUDES) -c $< -o $@
 
-DIRS_LIST	= mem put lists string utils gnl maths numbers ftprintf ftprintf/display ftprintf/lists complex
+DIRS_LIST	= $(shell ls -R srcs 2> /dev/null | grep / | cut -d / -f2-3 | cut -d : -f 1)
+#mem put lists string utils gnl maths numbers ftprintf ftprintf/display ftprintf/lists complex endian
 
 all: $(NAME)
 	@ printf "\r                                                                                          \r"

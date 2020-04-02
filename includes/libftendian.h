@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   libftendian.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgascon <dgascon@student.le-101.fr>        +#+  +:+       +#+        */
+/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 01:06:13 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:22 by dgascon          ###   ########lyon.fr   */
+/*   Created: 2019/12/16 15:56:07 by dgascon           #+#    #+#             */
+/*   Updated: 2020/02/28 15:52:16 by nlecaill         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The isdigit() function tests for a decimal digit character.
-*/
+#ifndef LIBFTENDIAN_H
+# define LIBFTENDIAN_H
 
-int		ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
+# define LITTLE_ENDIAN 1
+# define BIG_ENDIAN 2
+
+int ft_endian(void);
+int ft_r_endian_int(int num);
+
+#endif

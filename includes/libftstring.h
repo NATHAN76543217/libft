@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   libftstring.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgascon <dgascon@student.le-101.fr>        +#+  +:+       +#+        */
+/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:32:02 by dgascon           #+#    #+#             */
 /*   Updated: 2020/02/17 10:06:50 by dgascon          ###   ########lyon.fr   */
@@ -35,7 +35,6 @@ size_t len);
 int				ft_strstr(const char *hay, const char *needle);
 int				ft_charstr(const char hay, const char *needle);
 char			*ft_chartostr(int c);
-int				ft_atoi(const char *str);
 char			*ft_strdup(const char *s1);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
@@ -46,4 +45,5 @@ void			splitfree(char **ptr);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_delcharstr(char *line, char *charset);
 char			*ft_strmjoin(char *format, ...);
+int				ft_str_endwith(const char *str, const char *buf);
 #endif
