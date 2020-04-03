@@ -16,6 +16,7 @@
 # define SUCCESS 1
 # define ENDFILE 0
 # include <fcntl.h>
+//Pour open
 
 typedef struct	s_gnl_lc
 {
@@ -33,5 +34,5 @@ typedef struct	s_gnl
 
 int				gnl_line(char *buffer, char **line, int index);
 int				get_next_line(int fd, char **line);
-int				checkformatfile(char *file, t_gnl *gnl, char *ext);
+int				checkfileformat(char *file, t_gnl *gnl, char *ext);
 #endif

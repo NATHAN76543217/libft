@@ -12,9 +12,8 @@
 
 #ifndef FT_LIBFTPRINTF_H
 # define FT_LIBFTPRINTF_H
-# include <stdio.h>
 # include <stdarg.h>
-# include "libft.h"
+//Pour la va_list
 
 # define RESET			"\033[0m"
 # define BLACK			"\033[30m"
