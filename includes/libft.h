@@ -24,6 +24,5 @@
 # include "libftcomplex.h"
 # include "libftendian.h"
 # include <stdlib.h>
-# include <stddef.h>
 # include <unistd.h>
 #endif

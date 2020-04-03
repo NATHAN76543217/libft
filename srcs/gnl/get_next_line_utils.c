@@ -23,7 +23,7 @@ int		gnl_line(char *buffer, char **line, int index)
 	return (0);
 }
 
-int	checkformatfile(char *file, t_gnl *gnl, char *ext)
+int	checkfileformat(char *file, t_gnl *gnl, char *ext)
 {
 	if (ft_strcmp(file + ft_strlen(file) - 4, ext) != 0)
 		return (ft_msg(TM_ERROR, "Extention du fichier, non correct.",
