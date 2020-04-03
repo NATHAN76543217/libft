@@ -34,5 +34,6 @@ typedef struct	s_gnl
 
 int				gnl_line(char *buffer, char **line, int index);
 int				get_next_line(int fd, char **line);
+int				get_next_xbytes(int fd, void **bytes, unsigned int x);
 int				checkfileformat(char *file, t_gnl *gnl, char *ext);
 #endif

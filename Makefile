@@ -20,7 +20,7 @@ PATH_SRC	=	srcs
 PATH_OBJ	=	objs
 
 SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
-				string/ft_tolower.c						\
+				string/ft_tolower.c										\
 				string/ft_isascii.c		string/ft_isprint.c				\
 				string/ft_isalpha.c		string/ft_isdigit.c				\
 				string/ft_isalnum.c		string/ft_strchr.c				\
@@ -43,7 +43,7 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				put/ft_putstr_fd.c		put/ft_putendl_fd.c				\
 				put/ft_putnbr_fd.c		put/ft_putnbr_base_fd.c			\
 				put/ft_putnstr_fd.c		put/ft_putnbr_ui_base_fd.c		\
-				put/ft_putnbr_format_fd.c								\
+										put/ft_putnbr_format_fd.c		\
 				put/ft_message.c										\
 				lists/ft_lstnew.c		lists/ft_lstadd_front.c			\
 				lists/ft_lstsize.c		lists/ft_lstlast.c				\
@@ -51,6 +51,7 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				lists/ft_lstclear.c		lists/ft_lstiter.c				\
 				lists/ft_lstmap.c										\
 				gnl/get_next_line.c		gnl/get_next_line_utils.c		\
+				gnl/get_next_xbytes.c									\
 				maths/ft_power.c		maths/ft_sqrt.c	maths/ft_abs.c	\
 				numbers/ft_digit.c		numbers/ft_digit_base.c			\
 				numbers/ft_digit_ul_base.c numbers/ft_itoa.c			\
@@ -65,10 +66,11 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				ftprintf/display/pf_disp_ptr.c 							\
 				ftprintf/display/pf_disp_string.c 						\
 				ftprintf/display/pf_disp.c								\
-				complex/add_comp.c	complex/mult_comp.c					\
+				complex/add_comp.c		complex/mult_comp.c				\
 				endian/ft_endian.c 		endian/ft_r_endian_int.c		
 
-INCS_LIST	=	libft.h libftenum.h libftgnl.h libftlst.h libftmaths.h libftmem.h libftnumbers.h libftprintf.h libftput.h libftstring.h libftcomplex.h libftendian.h
+INCS_LIST	= $(shell ls $(PATH_INC))
+# libft.h libftenum.h libftgnl.h libftlst.h libftmaths.h libftmem.h libftnumbers.h libftprintf.h libftput.h libftstring.h libftcomplex.h libftendian.h
 
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRC_LIST:.c=.o))
 INCS		=	$(addprefix $(PATH_INC)/, $(INCS_LIST))
