@@ -80,7 +80,7 @@ INCLUDES	=	-I$(PATH_INC)
 CFLAGS		=	-Wall -Wextra -Werror
 C-O			=	$(CC) $(CFLAGS) $(PF_LIB) $(INCLUDES) -c $< -o $@
 
-DIRS_LIST	= $(shell ls -R srcs 2> /dev/null | grep / | cut -d / -f2-3 | cut -d : -f 1)
+DIRS_LIST	=	$(shell ls -R srcs 2> /dev/null | grep / | cut -d / -f2-3 | cut -d : -f 1)
 #mem put lists string utils gnl maths numbers ftprintf ftprintf/display ftprintf/lists complex endian
 
 all: $(NAME)
