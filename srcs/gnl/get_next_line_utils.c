@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:56:28 by nlecaill          #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:22 by nlecaill         ###   ########lyon.fr   */
+/*   Updated: 2021/08/01 22:10:32 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		gnl_line(char *buffer, char **line, int index)
 	else
 		(*line) = ft_substr(buffer, 0, ft_strlen(buffer));
 	if (!(*line))
-		return (ERROR);
+		return (GNL_ERROR);
 	return (0);
 }
 

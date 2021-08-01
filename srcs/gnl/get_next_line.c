@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:28:45 by nlecaill          #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:22 by nlecaill         ###   ########lyon.fr   */
+/*   Updated: 2021/08/01 22:11:00 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,11 @@ static int		gnl_check(int fd, char **buffer)
 
 	state = 1;
 	if (!(str = wrmalloc((BUFFER_SIZE + 1) * sizeof(char))))
-		return (ERROR);
+		return (GNL_ERROR);
 	if ((read_size = read(fd, str, BUFFER_SIZE)) == -1)
 	{
 		wrfree(str);
-		return (ERROR);
+		return (GNL_ERROR);
 	}
 	str[read_size] = '\0';
 	(!ft_strlen(str)) ? state = 0 : 0;
@@ -78,7 +78,7 @@ static int		gnl_check(int fd, char **buffer)
 	if (!(*buffer = ft_strjoin(*buffer, str)))
 	{
 		wrfree(str);
-		return (ERROR);
+		return (GNL_ERROR);
 	}
 	wrfree(buffer_save);
 	wrfree(str);
@@ -121,18 +121,18 @@ int				get_next_line(int fd, char **line)
 
 	n_buff = NULL;
 	if (!(fd >= 0 && BUFFER_SIZE > 0 && (current = gnl_fct(&buffer, fd))))
-		return (ERROR);
+		return (GNL_ERROR);
 	while (!(i = ft_strichr(current->buffer, '\n')))
 		if ((state_gnlcheck = gnl_check(fd, &current->buffer)) == -1)
-			return (ERROR);
+			return (GNL_ERROR);
 		else if (state_gnlcheck == 0)
 			break ;
 	if ((i > 0) &&
 		!(n_buff = ft_substr(current->buffer, i, ft_strlen(current->buffer))))
-		return (ERROR);
+		return (GNL_ERROR);
 	if (gnl_line(current->buffer, line, i) == -1)
-		return (ERROR);
+		return (GNL_ERROR);
 	wrfree(current->buffer);
 	current->buffer = n_buff;
-	return ((i == 0) ? gnl_free_mail(&buffer, current, ENDFILE) : SUCCESS);
+	return ((i == 0) ? gnl_free_mail(&buffer, current, GNL_ENDFILE) : GNL_SUCCESS);
 }
