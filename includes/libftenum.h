@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftenum.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 15:56:07 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/28 15:52:16 by nlecaill         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 14:12:37 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 enum	e_boolean
 {
-	TRUE = 1,
-	FALSE = 0
+	FT_TRUE = 1,
+	FT_FALSE = 0
 };
 
 enum	e_base

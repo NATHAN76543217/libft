@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_initlst.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgascon <dgascon@student.le-101.fr>        +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:12:37 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:22 by dgascon          ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 14:12:37 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void	pf_initlst(va_list *ap, t_pf *tpf)
 {
 	tpf->ap = ap;
-	tpf->fmoins = FALSE;
-	tpf->fprecision = FALSE;
-	tpf->fstars = FALSE;
-	tpf->fzero = FALSE;
-	tpf->fplus = FALSE;
-	tpf->fdiese = FALSE;
-	tpf->fspace = FALSE;
-	tpf->fapostrophe = FALSE;
+	tpf->fmoins = FT_FALSE;
+	tpf->fprecision = FT_FALSE;
+	tpf->fstars = FT_FALSE;
+	tpf->fzero = FT_FALSE;
+	tpf->fplus = FT_FALSE;
+	tpf->fdiese = FT_FALSE;
+	tpf->fspace = FT_FALSE;
+	tpf->fapostrophe = FT_FALSE;
 	tpf->vprecision = -1;
 	tpf->whitespace = 0;
 	tpf->zero = 0;

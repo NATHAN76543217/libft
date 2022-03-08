@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgascon <dgascon@student.le-101.fr>        +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 01:37:36 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:22 by dgascon          ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 14:12:23 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 ** The isalnum() function tests for any character for which isalpha(3) or
-** isdigit(3) is true.
+** isdigit(3) is FT_TRUE.
 */
 
 int		ft_isalnum(int c)

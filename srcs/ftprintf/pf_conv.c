@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_conv.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgascon <dgascon@student.le-101.fr>        +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:36:07 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:22 by dgascon          ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 14:12:37 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	pf_conv3(t_pf *tpf, const char *format, int i)
 {
 	if (format[i] == '.')
 	{
-		tpf->fprecision = TRUE;
-		tpf->fzero = FALSE;
+		tpf->fprecision = FT_TRUE;
+		tpf->fzero = FT_FALSE;
 		i++;
 		if (format[i] == '*')
 		{
@@ -47,7 +47,7 @@ int	pf_conv3(t_pf *tpf, const char *format, int i)
 			if (tpf->vprecision < 0)
 			{
 				tpf->vprecision = -1;
-				tpf->fprecision = FALSE;
+				tpf->fprecision = FT_FALSE;
 			}
 		}
 		else if (ft_isdigit(format[i]))
@@ -68,7 +68,7 @@ int	pf_conv2(t_pf *tpf, const char *format, int i)
 		tpf->width = va_arg(*(tpf->ap), int);
 		if (tpf->width < 0)
 		{
-			tpf->fmoins = TRUE;
+			tpf->fmoins = FT_TRUE;
 			tpf->width *= -1;
 		}
 		i++;
@@ -89,12 +89,12 @@ int	pf_conv(t_pf *tpf, const char *format)
 	i = 0;
 	while (ft_charstr(format[i], "-+0# \'"))
 	{
-		(format[i] == '-') ? tpf->fmoins = TRUE : 0;
-		(format[i] == '#') ? tpf->fdiese = TRUE : 0;
-		(format[i] == '0') ? tpf->fzero = TRUE : 0;
-		(format[i] == '+') ? tpf->fplus = TRUE : 0;
-		(format[i] == ' ') ? tpf->fspace = TRUE : 0;
-		(format[i] == '\'') ? tpf->fapostrophe = TRUE : 0;
+		(format[i] == '-') ? tpf->fmoins = FT_TRUE : 0;
+		(format[i] == '#') ? tpf->fdiese = FT_TRUE : 0;
+		(format[i] == '0') ? tpf->fzero = FT_TRUE : 0;
+		(format[i] == '+') ? tpf->fplus = FT_TRUE : 0;
+		(format[i] == ' ') ? tpf->fspace = FT_TRUE : 0;
+		(format[i] == '\'') ? tpf->fapostrophe = FT_TRUE : 0;
 		i++;
 	}
 	return (pf_conv2(tpf, format, i));

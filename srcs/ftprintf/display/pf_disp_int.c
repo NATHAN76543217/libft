@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_disp_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgascon <dgascon@student.le-101.fr>        +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 15:05:40 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:41 by dgascon          ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 14:12:37 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ static void		disp_int_2(t_pf *tpf, char *base, long val, int argsize)
 	}
 	disp_process(tpf, val);
 	length_calc(tpf, 3, tpf->whitespace, tpf->zero, argsize);
-	if (tpf->fmoins == FALSE)
+	if (tpf->fmoins == FT_FALSE)
 		disp_int_show_no_fmoins(tpf, base, val);
 	else
 		disp_int_show_fmoins(tpf, base, val);

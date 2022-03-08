@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_disp_ptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgascon <dgascon@student.le-101.fr>        +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 15:38:37 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:22 by dgascon          ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 14:12:37 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	disp_ptr_2(t_pf *tpf, char *base, unsigned long val)
 {
-	if (tpf->fmoins == FALSE)
+	if (tpf->fmoins == FT_FALSE)
 	{
 		ft_putcharec_fd(' ', tpf->whitespace, 1);
 		(tpf->specifier == 'p') ? ft_putstr_fd("0x", 1) : 0;
