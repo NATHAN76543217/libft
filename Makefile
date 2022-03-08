@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+         #
+#    By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 15:11:52 by dgascon           #+#    #+#              #
-#    Updated: 2020/03/02 18:51:42 by nlecaill         ###   ########lyon.fr    #
+#    Updated: 2022/03/08 14:32:24 by sebastienle      ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				string/ft_split.c		string/ft_strmapi.c				\
 				string/ft_strcat.c		string/ft_strichr.c				\
 				string/ft_chartostr.c	string/ft_charstr.c				\
+				string/ft_capitalize.c	string/ft_strncpy.c				\
 				string/ft_strcmp.c		string/ft_str_endwith.c			\
 				string/ft_delcharstr.c									\
 				mem/ft_memset.c			mem/ft_bzero.c					\

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftstring.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:32:02 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/17 10:06:50 by dgascon          ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 14:36:25 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+char			*ft_capitalize(char *str);
 char			*ft_strchr(const char *s, int c);
 int				ft_strichr(const char *str, int charset);
 char			*ft_strrchr(const char *s, int c);
 int				ft_strcmp(char *s1, char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+char			*ft_strncpy(char *dst, const char *src, size_t len);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strcat(char *s1, const char *s2);
