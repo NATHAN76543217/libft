@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libftendian.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 15:56:07 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/28 15:52:16 by nlecaill         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 14:20:07 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTENDIAN_H
 # define LIBFTENDIAN_H
 
-# define LITTLE_ENDIAN 1
-# define BIG_ENDIAN 2
+# ifndef LITTLE_ENDIAN
+#  define LITTLE_ENDIAN 1
+#  define BIG_ENDIAN    2
+# endif
 
 int ft_endian(void);
 int ft_r_endian_int(int num);
