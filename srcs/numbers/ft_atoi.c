@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 01:37:25 by nlecaill          #+#    #+#             */
-/*   Updated: 2020/02/17 09:19:22 by nlecaill         ###   ########lyon.fr   */
+/*   Updated: 2021/08/04 16:51:40 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int		ft_atoi(const char *str)
 		(*(str + i++) == '-') ? sign = -1 : 0;
 	while (ft_isdigit(*(str + i)))
 	{
-		if (result * sign > 2147483647)
+		if (result * sign > INT32_MAX)
 			return (-1);
-		if (result * sign < -2147483648)
+		if (result * sign < INT32_MIN)
 			return (0);
 		result = result * 10 + (*(str + i++) - '0');
 	}

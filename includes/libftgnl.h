@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libftgnl.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlecaill <nlecaill@student.le-101.fr>      +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:32:02 by dgascon           #+#    #+#             */
-/*   Updated: 2020/02/17 09:18:09 by dgascon          ###   ########lyon.fr   */
+/*   Updated: 2021/08/01 22:09:24 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTGNL_H
 # define LIBFTGNL_H
-# define ERROR -1
-# define SUCCESS 1
-# define ENDFILE 0
+# define GNL_ERROR -1
+# define GNL_SUCCESS 1
+# define GNL_ENDFILE 0
 # include <fcntl.h>
 //Pour open
 
