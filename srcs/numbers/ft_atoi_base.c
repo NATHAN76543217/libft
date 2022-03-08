@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
+/*   By: nlecaill <nlecaill@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 19:34:58 by dgascon           #+#    #+#             */
-/*   Updated: 2022/03/08 15:19:56 by sebastienle      ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 18:08:01 by nlecaill         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ static int		ft_find_index(char ch, const char *base)
 	}
 	return (-1);
 }
-# include <stdio.h>
 
 int     ft_atoi_base(const char *str, const char *baseSet)
 {
