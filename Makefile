@@ -6,7 +6,7 @@
 #    By: nlecaill <nlecaill@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 15:11:52 by dgascon           #+#    #+#              #
-#    Updated: 2022/03/08 17:53:38 by nlecaill         ###   ########lyon.fr    #
+#    Updated: 2022/03/08 18:22:41 by nlecaill         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				ftprintf/display/pf_disp_string.c 						\
 				ftprintf/display/pf_disp.c								\
 				network/arp.c			network/ip.c					\
-				network/bpf.c											\
+				network/bpf.c			network/ether.c					\
 				complex/add_comp.c		complex/mult_comp.c				\
 				endian/ft_endian.c 		endian/ft_r_endian_int.c		
 

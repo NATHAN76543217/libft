@@ -6,7 +6,7 @@
 /*   By: nlecaill <nlecaill@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:32:02 by dgascon           #+#    #+#             */
-/*   Updated: 2022/03/08 17:55:04 by nlecaill         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 18:22:07 by nlecaill         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,11 @@ char	*ipToStr(const struct sockaddr *sa, char *dest, size_t maxlen);
 
 /* BPF */
 int		openBpfFile(int *socket, int logFd, int verbose);
+
+/* Ether */
+void				printMac(struct ether_addr *dst, const char *str);
+char				*macToStr(const struct ether_addr *mac, char dst[ETHER_ADDRSTRLEN]);
+struct ether_addr	*strToMac(struct ether_addr *dst, const char *str);
+
 
 #endif
