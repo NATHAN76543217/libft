@@ -6,7 +6,7 @@
 #    By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 15:11:52 by dgascon           #+#    #+#              #
-#    Updated: 2022/03/08 14:32:24 by sebastienle      ###   ########lyon.fr    #
+#    Updated: 2022/03/08 15:05:37 by sebastienle      ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
 				gnl/get_next_xbytes.c									\
 				maths/ft_power.c		maths/ft_sqrt.c	maths/ft_abs.c	\
 				numbers/ft_digit.c		numbers/ft_digit_base.c			\
+				numbers/ft_atoi_base.c 									\
 				numbers/ft_digit_ul_base.c numbers/ft_itoa.c			\
 				numbers/ft_itoa_base.c	numbers/ft_digit_format_base.c	\
 				numbers/ft_atoi.c		numbers/ft_natoi.c				\
