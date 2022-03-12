@@ -12,25 +12,43 @@
 
 # include "libft.h"
 
+// # ifdef OSX
+void	fillArpHeader(arp_t *arpFrame, uint16_t arpType)
+{
+		/* fill ARP header */
+	arpFrame->ea_hdr.ar_hrd	= htons(ARPHRD_ETHER);
+	arpFrame->ea_hdr.ar_pro	= htons(ETHERTYPE_IP);
+	arpFrame->ea_hdr.ar_hln	= ETHER_ADDR_LEN;
+	arpFrame->ea_hdr.ar_pln	= IPV4_ADDR_LEN;
+	arpFrame->ea_hdr.ar_op	= htons(arpType);
+}
+// # endif //OSX
+// #elif defined LINUX
+// void	fillArpHeaderLinux(arp_t *arpFrame)
+// {
+// 
+// }
+// # endif //LINUX
 /*
 ** Fill an ARP Packet with provided data
 */
 int	fillArpPacket(
-	struct ether_arp	*arphdr,
-	struct ether_addr	*srcMac,
-	struct ether_addr	*trgMac,
-	u_char *srcIp,
-	u_char *trgIp,
-	u_short arpType)
+	arp_t	*arphdr,
+	macAddr_t	*srcMac,
+	macAddr_t	*trgMac,
+	uint8_t *srcIp,
+	uint8_t *trgIp,
+	uint16_t arpType)
 {
 	if (!arphdr || !srcIp || !trgIp || !srcMac || !trgMac)
 		return EXIT_FAILURE;
-	/* fill ARP header */
-	arphdr->ea_hdr.ar_hrd	= htons(ARPHRD_ETHER);
-	arphdr->ea_hdr.ar_pro	= htons(ETHERTYPE_IP);
-	arphdr->ea_hdr.ar_hln	= ETHER_ADDR_LEN;
-	arphdr->ea_hdr.ar_pln	= IPV4_ADDR_LEN;
-	arphdr->ea_hdr.ar_op	= htons(arpType);
+// # ifdef OSX
+	fillArpHeader(arphdr, arpType);
+// # endif //OSX
+// #elif defined LINUX
+	// fillArpHeaderLinux(arphdr);
+// # endif //LINUX
+
 
 	/* fill ARP values */
 	ft_memcpy(arphdr->arp_tha, srcMac, ETHER_ADDR_LEN);	

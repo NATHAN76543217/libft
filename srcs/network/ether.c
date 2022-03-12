@@ -14,15 +14,36 @@
 
 
 /*
+** Fill an Ethernet Packet with provided data
+*/
+int		fillEtherPacket(etherHead_t *eth, macAddr_t *src, macAddr_t *dst, uint16_t type)
+{
+	if (!eth || !src || !dst)
+		return EXIT_FAILURE;
+
+# ifdef OSX
+	ft_memcpy(eth->ether_dhost, dst, ETHER_ADDR_LEN);
+	ft_memcpy(eth->ether_shost, src, ETHER_ADDR_LEN);
+	eth->ether_type = htons(type);
+# else
+	ft_memcpy(eth->h_dest, dst, ETHER_ADDR_LEN);
+	ft_memcpy(eth->h_source, src, ETHER_ADDR_LEN);
+	eth->h_proto = htons(type);
+# endif //OSX
+	return EXIT_SUCCESS;
+}
+
+
+/*
 ** Print a Mac address prefixed by str
 */
-void	printMac(struct ether_addr *eth, const char *str)
+void	printMac(macAddr_t *addr, const char *str)
 {
 	dprintf(STDOUT_FILENO, "%s %02x:%02x:%02x:%02x:%02x:%02x\n",
 			str,
-			eth->octet[0], eth->octet[1],
-			eth->octet[2], eth->octet[3],
-			eth->octet[4], eth->octet[5]);
+			addr->octet[0], addr->octet[1],
+			addr->octet[2], addr->octet[3],
+			addr->octet[4], addr->octet[5]);
 	return ;
 }
 
@@ -31,7 +52,7 @@ void	printMac(struct ether_addr *eth, const char *str)
 ** Convert a MAC address into its string representation.
 ** return a pointer to dest.
 */
-char	*macToStr(const struct ether_addr *mac, char dst[ETHER_ADDRSTRLEN])
+char	*macToStr(const macAddr_t *mac, char dst[ETHER_ADDRSTRLEN])
 {
 	dst[sprintf(dst, "%02x:%02x:%02x:%02x:%02x:%02x",
 		mac->octet[0], mac->octet[1],
@@ -46,7 +67,7 @@ char	*macToStr(const struct ether_addr *mac, char dst[ETHER_ADDRSTRLEN])
 ** Extract a MAC address from a string str and store it into dst.
 ** return a pointer to dest.
 */
-struct ether_addr	*strToMac(struct ether_addr *dst, const char *str)
+macAddr_t *strToMac(macAddr_t *dst, const char *str)
 {
 	int i = 0;
 	int x = 0;

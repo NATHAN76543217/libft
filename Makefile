@@ -79,16 +79,20 @@ INCS_LIST	= $(shell ls $(PATH_INC))
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRC_LIST:.c=.o))
 INCS		=	$(addprefix $(PATH_INC)/, $(INCS_LIST))
 
-CC			=	gcc
+COMP		=	gcc
 INCLUDES	=	-I$(PATH_INC)
 CFLAGS		=	-Wall -Wextra -Werror
-C-O			=	$(CC) $(CFLAGS) $(PF_LIB) $(INCLUDES) -c $< -o $@
+C-O			=	
 
 DIRS_LIST	=	$(shell ls -R srcs 2> /dev/null | grep / | cut -d / -f2-3 | cut -d : -f 1)
 #mem put lists string utils gnl maths numbers ftprintf ftprintf/display ftprintf/lists complex endian
 
-all: $(NAME)
+all: display_os $(NAME)
 	@ printf "\r                                                                                          \r"
+
+#	include OS detection
+include detectOs.mk
+
 
 $(NAME): $(OBJS) $(INCS)
 	@ ar rc $(NAME) $(OBJS)
@@ -96,7 +100,7 @@ $(NAME): $(OBJS) $(INCS)
 $(PATH_OBJ)/%.o: $(PATH_SRC)/%.c $(INCS)
 	@ $(shell mkdir -p $(PATH_OBJ) $(addprefix $(PATH_OBJ)/, $(DIRS_LIST)))
 	@ printf "\033[0;38;5;198mCompilation de \033[1m$< ..."
-	@ $(C-O)
+	@ $(COMP) $(CFLAGS) $(PF_LIB) $(INCLUDES) -c $< -o $@
 	@ printf "\r                                                                                          \r"
 
 clean:
