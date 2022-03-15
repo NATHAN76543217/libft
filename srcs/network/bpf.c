@@ -12,6 +12,7 @@
 
 # include "libft.h"
 
+# ifdef OSX
 /*
 ** Open a Bfd file and fill socket with the corresponding fd.
 ** Log will be written into logFd. Set LogFd to -1 to disable log.
@@ -48,3 +49,4 @@ int	openBpfFile(int *socket, int logFd, int verbose)
 		dprintf(logFd, "Failed to open a bpf file (have you the right permissions?)\n");
 	return EXIT_FAILURE;
 }
+# endif //OSX

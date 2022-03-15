@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftnetwork.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlecaill <nlecaill@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:32:02 by dgascon           #+#    #+#             */
-/*   Updated: 2022/03/08 18:22:07 by nlecaill         ###   ########lyon.fr   */
+/*   Updated: 2022/03/15 23:14:19 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct ether_arp	arp_t;
 // #  include <netinet/if_ether.h>	/* arp_header */
 
 struct arp_hdr {
-	struct arphdr ea_hdr;
+	struct arphdr	ea_hdr;
 	uint8_t			arp_sha[ETHER_ADDR_LEN];
 	uint8_t			arp_spa[4];
 	uint8_t			arp_tha[ETHER_ADDR_LEN];
@@ -42,37 +42,40 @@ struct	_macAddr
 };
 
 typedef struct ethhdr		etherHead_t;
-typedef struct _macAddr			macAddr_t;
+typedef struct _macAddr		macAddr_t;
 typedef struct arp_hdr		arp_t;
 # endif
 
 
-# define IPV4_ADDR_LEN 4
-# define ETHER_ADDRSTRLEN 18
+# define IPV4_ADDR_LEN		4
+# define ETHER_ADDRSTRLEN	18
 
 
 
 /* ARP */
 int		fillArpPacket(
-	arp_t	*arphdr,
-	macAddr_t	*srcMac, macAddr_t	*trgMac,
-	uint8_t *srcIp, uint8_t *trgIp,
-	uint16_t arpType);
+	arp_t		*arphdr,
+	macAddr_t	*srcMac,
+	macAddr_t	*trgMac,
+	uint8_t		*srcIp,
+	uint8_t		*trgIp,
+	uint16_t	arpType);
 
 /* Ether */
 
-int				fillEtherPacket(etherHead_t *eth, macAddr_t *src, macAddr_t *dst, uint16_t type);
-void			printMac(macAddr_t *dst, const char *str);
-char			*macToStr(const macAddr_t *mac, char dst[ETHER_ADDRSTRLEN]);
-macAddr_t		*strToMac(macAddr_t *dst, const char *str);
+int			fillEtherPacket(etherHead_t *eth, macAddr_t *src, macAddr_t *dst, uint16_t type);
+void		printMac(macAddr_t *dst, const char *str);
+char		*macToStr(const macAddr_t *mac, char dst[ETHER_ADDRSTRLEN]);
+macAddr_t	*strToMac(macAddr_t *dst, const char *str);
 
 
 /* IP */
-char	*ipToStr(const struct sockaddr *sa, char *dest, size_t maxlen);
+char		*ipToStr(const struct sockaddr *sa, char *dest, size_t maxlen);
 
+# ifdef OSX
 /* BPF */
 int		openBpfFile(int *socket, int logFd, int verbose);
-
+# endif // OSX
 
 
 #endif

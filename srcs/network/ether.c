@@ -74,7 +74,6 @@ macAddr_t *strToMac(macAddr_t *dst, const char *str)
 	int number = 0;
 	int digit = 0;
 
-	dprintf(STDOUT_FILENO, "str = `%s`\n", str);
 	while (str[i] && x < 6)
 	{
 		if (str[i] == ':')

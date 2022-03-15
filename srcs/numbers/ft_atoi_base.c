@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlecaill <nlecaill@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 19:34:58 by dgascon           #+#    #+#             */
-/*   Updated: 2022/03/08 18:08:01 by nlecaill         ###   ########lyon.fr   */
+/*   Updated: 2022/03/15 23:43:08 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ int     ft_atoi_base(const char *str, const char *baseSet)
 		negative *= (str[i] == '-') ? -1 : 1;
 		i++;
 	}
-
+	while (str[i] == '0')
+		i++;
 	base = ft_strlen(baseSet);
 	while (str[i] != '\0')
 	{
