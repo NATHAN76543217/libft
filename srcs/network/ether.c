@@ -39,7 +39,7 @@ int		fillEtherPacket(etherHead_t *eth, macAddr_t *src, macAddr_t *dst, uint16_t 
 */
 void	printMac(macAddr_t *addr, const char *str)
 {
-	dprintf(STDOUT_FILENO, "%s %02x:%02x:%02x:%02x:%02x:%02x\n",
+	dprintf(STDOUT_FILENO, "%s%02x:%02x:%02x:%02x:%02x:%02x\n",
 			str,
 			addr->octet[0], addr->octet[1],
 			addr->octet[2], addr->octet[3],

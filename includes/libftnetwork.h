@@ -29,7 +29,7 @@ typedef struct ether_arp	arp_t;
 // #  include <netinet/if_ether.h>	/* arp_header */
 
 struct arp_hdr {
-	struct arphdr ea_hdr;
+	struct arphdr	ea_hdr;
 	uint8_t			arp_sha[ETHER_ADDR_LEN];
 	uint8_t			arp_spa[4];
 	uint8_t			arp_tha[ETHER_ADDR_LEN];
@@ -38,7 +38,7 @@ struct arp_hdr {
 
 struct	_macAddr
 {
-	uint16_t			octet[ETH_ALEN];
+	uint8_t			octet[ETH_ALEN];
 };
 
 typedef struct ethhdr		etherHead_t;
