@@ -38,7 +38,7 @@ struct arp_hdr {
 
 struct	_macAddr
 {
-	uint16_t			octet[ETH_ALEN];
+	uint8_t			octet[ETH_ALEN];
 };
 
 typedef struct ethhdr		etherHead_t;
