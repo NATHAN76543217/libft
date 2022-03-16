@@ -6,7 +6,7 @@
 /*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 19:34:58 by dgascon           #+#    #+#             */
-/*   Updated: 2022/03/08 14:33:51 by sebastienle      ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 05:57:35 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 char    *ft_capitalize(char *str)
 {
     int i = 0;
+
+    if (!str)
+        return NULL;
+
     while (str[i])
     {
         str[i] = ft_toupper(str[i]);

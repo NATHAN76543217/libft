@@ -54,6 +54,12 @@ void	printMac(macAddr_t *addr, const char *str)
 */
 char	*macToStr(const macAddr_t *mac, char dst[ETHER_ADDRSTRLEN])
 {
+	if (!mac)
+	{
+		if (dst)
+			dst[0] = '\0';
+		return dst;
+	}
 	dst[sprintf(dst, "%02x:%02x:%02x:%02x:%02x:%02x",
 		mac->octet[0], mac->octet[1],
 		mac->octet[2], mac->octet[3],
