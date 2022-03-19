@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nlecaill <nlecaill@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 15:11:52 by dgascon           #+#    #+#              #
-#    Updated: 2022/03/08 18:22:41 by nlecaill         ###   ########lyon.fr    #
+#    Updated: 2022/03/16 06:48:55 by sebastienle      ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,11 +84,14 @@ INCLUDES	=	-I$(PATH_INC)
 CFLAGS		=	-Wall -Wextra -Werror
 C-O			=	
 
+# include prefix definitions
+include fancyPrefix.mk
+
 DIRS_LIST	=	$(shell ls -R srcs 2> /dev/null | grep / | cut -d / -f2-3 | cut -d : -f 1)
 #mem put lists string utils gnl maths numbers ftprintf ftprintf/display ftprintf/lists complex endian
 
 all: display_os $(NAME)
-	@ printf "\r                                                                                          \r"
+	@ printf "\033[1K\r$(PREFIX_PROJECT)$(PREFIX_LINK) Compilation of $(NAME) done."
 
 #	include OS detection
 include detectOs.mk
@@ -101,7 +104,7 @@ $(PATH_OBJ)/%.o: $(PATH_SRC)/%.c $(INCS)
 	@ $(shell mkdir -p $(PATH_OBJ) $(addprefix $(PATH_OBJ)/, $(DIRS_LIST)))
 	@ printf "\033[0;38;5;198mCompilation de \033[1m$< ..."
 	@ $(COMP) $(CFLAGS) $(PF_LIB) $(INCLUDES) -c $< -o $@
-	@ printf "\r                                                                                          \r"
+	@ printf "\033[1K\r"
 
 clean:
 	@ /bin/rm -rf $(PATH_OBJ)
@@ -110,10 +113,10 @@ fclean: clean
 	@ /bin/rm -f $(NAME) ./a.out
 	@ printf "\033[0;38;5;160mSuppression de \033[1m$(NAME)/$(PATH_OBJ) ..."
 	@ sleep 0.2
-	@ printf "\r                                                                                          \r"
+	@ printf "\033[1K\r"
 	@ printf "\033[0;38;5;160mSuppression de \033[1m$(NAME)/$(NAME) ..."
 	@ sleep 0.2
-	@ printf "\r                                                                                          \r"
+	@ printf "\033[1K\r"
 	@ printf "\033[0;38;5;82mSuppression des fichiers de compilation reussis pour la \033[1mlibft.\n"
 
 re: fclean all
