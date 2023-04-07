@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/07 15:11:52 by dgascon           #+#    #+#              #
-#    Updated: 2022/03/16 06:48:55 by sebastienle      ###   ########lyon.fr    #
+#    Created: 2019/10/07 15:11:52 by nlecaill          #+#    #+#              #
+#    Updated: 2023/04/08 00:18:04 by sebastienle      ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ PATH_SRC	=	srcs
 PATH_OBJ	=	objs
 
 SRC_LIST	= 	string/ft_strlen.c		string/ft_toupper.c				\
-				string/ft_tolower.c										\
+				string/ft_tolower.c		string/ft_quote.c				\
 				string/ft_isascii.c		string/ft_isprint.c				\
 				string/ft_isalpha.c		string/ft_isdigit.c				\
 				string/ft_isalnum.c		string/ft_strchr.c				\

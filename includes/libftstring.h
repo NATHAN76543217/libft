@@ -6,7 +6,7 @@
 /*   By: sebastienlecaille <sebastienlecaille@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:32:02 by dgascon           #+#    #+#             */
-/*   Updated: 2022/03/08 14:36:25 by sebastienle      ###   ########lyon.fr   */
+/*   Updated: 2023/04/08 00:15:44 by sebastienle      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char			*ft_strnstr(const char *haystack, const char *needle,
 size_t len);
 int				ft_strstr(const char *hay, const char *needle);
 int				ft_charstr(const char hay, const char *needle);
+char			*ft_quote(char *s);
 char			*ft_chartostr(int c);
 char			*ft_strdup(const char *s1);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
